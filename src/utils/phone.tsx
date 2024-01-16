@@ -16,21 +16,21 @@ const Operators = [
 	{ name: "Smart", prefix: "093", min: 6, max: 6 },
 	{ name: "Smart", prefix: "096", min: 7, max: 7 },
 	{ name: "Smart", prefix: "098", min: 6, max: 6 },
-	// CELLCARD
-	{ name: "CellCard", prefix: "011", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "012", min: 6, max: 7 },
-	{ name: "CellCard", prefix: "014", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "017", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "061", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "076", min: 7, max: 7 },
-	{ name: "CellCard", prefix: "077", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "078", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "079", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "085", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "089", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "092", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "095", min: 6, max: 6 },
-	{ name: "CellCard", prefix: "099", min: 6, max: 6 },
+	// Cellcard
+	{ name: "Cellcard", prefix: "011", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "012", min: 6, max: 7 },
+	{ name: "Cellcard", prefix: "014", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "017", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "061", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "076", min: 7, max: 7 },
+	{ name: "Cellcard", prefix: "077", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "078", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "079", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "085", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "089", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "092", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "095", min: 6, max: 6 },
+	{ name: "Cellcard", prefix: "099", min: 6, max: 6 },
 	// METFONE
 	{ name: "Metfone", prefix: "031", min: 7, max: 7 },
 	{ name: "Metfone", prefix: "060", min: 6, max: 6 },
@@ -123,7 +123,7 @@ export default function PhoneBadge({
 	}, []);
 
 	createEffect(() => {
-		if (network().toLocaleLowerCase() === "cellcard") {
+		if (network().toLocaleLowerCase() === "Cellcard") {
 			setColor("badge-warning text-warning-content");
 		}
 		if (network().toLocaleLowerCase() === "smart") {

@@ -21,7 +21,7 @@ const MobileTopBar = () => {
 
 	return (
 		<>
-			<div class="btm-nav h-20 bg-primary/20 z-50 xl:hidden backdrop-blur-sm border">
+			<div class="btm-nav h-20 bg-primary/20 z-50 xl:hidden backdrop-blur-sm">
 				<A href="/" class="border-none bg-transparent">
 					<Show
 						when={location.pathname === "/"}
@@ -41,7 +41,7 @@ const MobileTopBar = () => {
 					</Show>
 				</A>
 
-				<A href="/search" class="border-none bg-transparent">
+				{/* <A href="/search" class="border-none bg-transparent">
 					<Show
 						when={location.pathname === "/search"}
 						fallback={
@@ -58,7 +58,7 @@ const MobileTopBar = () => {
 							</div>
 						</label>
 					</Show>
-				</A>
+				</A> */}
 
 				<A href="/cart" class="border-none bg-transparent">
 					<Show
@@ -67,14 +67,22 @@ const MobileTopBar = () => {
 							location.pathname === "/checkouts"
 						}
 						fallback={
-							<label class="btn-md flex justify-center btn-ghost btn-circle avatar ">
+							<label class="btn-md flex justify-center btn-ghost btn-circle avatar indicator">
+								<Show when={cartItems.length > 0}>
+									<span class="indicator-item badge badge-secondary">
+										{cartItems.length}
+									</span>
+								</Show>
 								<div class="w-7 rounded-box">
 									<RiFinanceShoppingBagLine class="h-full w-full text-primary" />
 								</div>
 							</label>
 						}
 					>
-						<label class="btn-md flex justify-center btn-ghost btn-circle avatar bg-primary/20 hover:bg-primary/20">
+						<label class="btn-md flex justify-center btn-ghost btn-circle avatar bg-primary/20 hover:bg-primary/20 indicator">
+							<span class="indicator-item badge badge-secondary">
+								{cartItems.length}
+							</span>
 							<div class="w-7 rounded-box">
 								<RiFinanceShoppingBagFill class="h-full w-full text-primary" />
 							</div>

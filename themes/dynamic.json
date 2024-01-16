@@ -23,17 +23,17 @@
 	"footer": {
 		"socials": [
 			{
-				"enable": false,
+				"enable": true,
 				"name": "youtube",
 				"link": "https://youtube.com"
 			},
 			{
-				"enable": false,
+				"enable": true,
 				"name": "twitter",
 				"link": "https://youtube.com"
 			},
 			{
-				"enable": false,
+				"enable": true,
 				"name": "facebook",
 				"link": "https://youtube.com"
 			},

@@ -33,7 +33,7 @@ export default function Cart() {
 									{(cartItem) => {
 										return (
 											<Show when={cartItem} fallback={<p>Loading...</p>}>
-												<div class="bg-secondary/5 md:flex md:justify-between md:items-center p-4 rounded-box">
+												<div class="bg-primary/10 md:flex md:justify-between md:items-center p-4 rounded-box">
 													<div class="flex items-center space-x-3">
 														<div>
 															<div class="avatar">
@@ -106,16 +106,19 @@ export default function Cart() {
 									}}
 								</For>
 							</div>
-							<A href="/products">
-								<button class="btn btn-primary w-full rounded-box my-8">
+							{/* <A href="/products" class="">
+								
+							</A> */}
+							<div class="px-2">
+								<button class="btn btn-primary btn-block rounded-box my-8 ">
 									<FiShoppingCart class="text-xl" />
 									More Products
 								</button>
-							</A>
+							</div>
 						</div>
 
 						<div class="md:col-span-2  rounded-xl">
-							<div class=" p-6 rounded-xl">
+							<div class=" p-2 md:p-6 rounded-xl">
 								<div class="grid grid-cols-1 justify-start">
 									<h1 class="font-bold text-lg uppercase">Summary</h1>
 								</div>

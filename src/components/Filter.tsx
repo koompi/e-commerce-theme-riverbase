@@ -16,7 +16,7 @@ export const Filter = () => {
 	return (
 		<div class="mt-8">
 			<input
-				class="input bg-secondary/5 w-full"
+				class="input bg-primary/10 w-full"
 				onInput={(e) => {
 					setValue(e.target.value),
 						navigate(
@@ -28,7 +28,7 @@ export const Filter = () => {
 				type="text"
 				placeholder="Search"
 			/>
-			<div class="p-4 rounded-box mt-5 bg-secondary/5 ">
+			<div class="p-4 rounded-box mt-5 bg-primary/10 ">
 				<h5 class="inline-flex items-center text-xl font-semibold mb-2 ">
 					Filters
 				</h5>

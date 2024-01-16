@@ -1,4 +1,11 @@
-import { Component, Show, createEffect, createSignal } from "solid-js";
+import {
+	Component,
+	Match,
+	Show,
+	Switch,
+	createEffect,
+	createSignal,
+} from "solid-js";
 import {
 	SubmitHandler,
 	createForm,
@@ -39,14 +46,14 @@ export const DeliveryForm: Component<{ refetch: Function }> = (props) => {
 	const [files, setFiles] = createSignal<File>();
 
 	createEffect(() => {
-		if (operator().toLocaleLowerCase() === "cellcard") {
-			setColor("badge-warning text-warning-content");
+		if (operator().toLocaleLowerCase() === "Cellcard") {
+			setColor("bg-orange-600 text-white");
 		}
 		if (operator().toLocaleLowerCase() === "smart") {
-			setColor("badge-success text-success-content");
+			setColor("bg-green-600 text-white");
 		}
 		if (operator().toLocaleLowerCase() === "metfone") {
-			setColor("badge-error text-error-content");
+			setColor("bg-red-600 text-white");
 		}
 	});
 
@@ -134,7 +141,7 @@ export const DeliveryForm: Component<{ refetch: Function }> = (props) => {
 			>
 				{(field, props) => (
 					<div
-						class="w-full relative bg-secondary/5 rounded-lg p-6 cursor-pointer"
+						class="w-full relative bg-primary/10 rounded-lg p-6 cursor-pointer"
 						id="dropzone"
 					>
 						<input
@@ -257,11 +264,29 @@ export const DeliveryForm: Component<{ refetch: Function }> = (props) => {
 			<div class="form-control">
 				<label class="label">
 					<span class="label-text">Phone number</span>
-					{operator() !== "" && (
-						<span class={`label-text-alt badge ${color} badge-sm block mb-1 `}>
-							{operator()}
-						</span>
-					)}
+					<Switch>
+						<Match when={operator() === "Smart"}>
+							<span
+								class={`label-text-alt badge badge-sm block mb-1 bg-green-600 text-white`}
+							>
+								{operator()}
+							</span>
+						</Match>
+						<Match when={operator() === "Cellcard"}>
+							<span
+								class={`label-text-alt badge badge-sm block mb-1 bg-orange-500 text-white`}
+							>
+								{operator()}
+							</span>
+						</Match>
+						<Match when={operator() === "Metfone"}>
+							<span
+								class={`label-text-alt badge badge-sm block mb-1 bg-red-600 text-white`}
+							>
+								{operator()}
+							</span>
+						</Match>
+					</Switch>
 				</label>
 				<input
 					type="text"

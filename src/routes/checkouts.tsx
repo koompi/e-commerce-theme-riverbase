@@ -98,7 +98,7 @@ export default function Checkout() {
 					<Dialog
 						modalId={open}
 						// modalId={() => "my_modal_2"}
-						classes="sm:w-1/2 max-h-min h-min  flex justify-center text-center rounded-xl"
+						classes="sm:w-1/2 max-h-min  flex justify-center text-center rounded-xl p-6"
 					>
 						<div class="w-full h-full  space-y-2">
 							<div class="flex justify-center font-bold text-2xl">
@@ -110,7 +110,7 @@ export default function Checkout() {
 								class="h-2/3 mx-auto flex-grow"
 							/>
 							<button
-								class="btn btn-primary rounded-box sm:w-full w-2/3"
+								class="btn btn-primary btn-block rounded-box"
 								onClick={(e) => {
 									e.preventDefault();
 									cleanCartItems();
@@ -123,13 +123,13 @@ export default function Checkout() {
 					</Dialog>
 					<div>
 						<div class="grid md:grid-cols-2 gap-8 mt-8">
-							<main class=" md:block hidden ">
-								<div class="bg-secondary/5 p-5 rounded-xl shadow-sm">
+							<main class=" ">
+								<div class="bg-primary/10 p-5 rounded-xl shadow-sm">
 									<DeliveryOption Field={Field} />
 									<div class="flex justify-start">
 										<h1 class="text-xl font-semibold pb-8">Payments</h1>
 									</div>
-									<div class="grid grid-cols-2 gap-4">
+									<div class="grid md:grid-cols-2 gap-4">
 										<For
 											each={[
 												{ label: "cash", value: "CASH" },
@@ -150,7 +150,7 @@ export default function Checkout() {
 												>
 													{(field, props) => (
 														<div
-															class={`rounded-xl p-3 bg-secondary/5`}
+															class={`rounded-xl p-3 bg-primary/10`}
 															classList={{
 																"ring ring-primary":
 																	field.value?.includes(value),
@@ -180,7 +180,7 @@ export default function Checkout() {
 								{/* <Delivery Field={Field} /> */}
 							</main>
 							<main class="w-full">
-								<div class="bg-secondary/5 p-6 rounded-xl">
+								<div class="bg-primary/10 p-6 rounded-xl">
 									<h1 class="text-xl font-semibold pb-2">
 										My shopping bag ({cartItems.length})
 									</h1>
@@ -314,7 +314,7 @@ export default function Checkout() {
 										}}
 									</For>
 								</div>
-								<div class=" md:col-span-2 mt-9 md:mt-6 bg-secondary/5 p-4 rounded-xl">
+								<div class=" md:col-span-2 mt-9 md:mt-6 bg-primary/10 p-4 rounded-xl">
 									<div class="grid grid-cols-1 justify-start">
 										<h1 class="font-bold uppercase">Summary</h1>
 									</div>
@@ -489,7 +489,7 @@ const DeliveryOption = ({ Field }: any) => {
 					</For>
 				</section>
 			</Show>
-			<div class="collapse bg-secondary/5 collapse-plus mb-6">
+			<div class="collapse bg-primary/10 collapse-plus mb-6">
 				<input type="checkbox" />
 				<div class="collapse-title text-md font-medium">Add new location</div>
 				<div class="collapse-content">

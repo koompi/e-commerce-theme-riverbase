@@ -10,7 +10,7 @@ const Navbar = () => {
 	const { user, loading, login } = useAuth();
 
 	return (
-		<div class="navbar w-full bg-primary/10 relative sm:sticky top-0 z-50 backdrop-blur-lg">
+		<div class="navbar w-full bg-primary/20 relative sm:sticky top-0 z-50 backdrop-blur-lg">
 			<div class="md:flex hidden justify-between w-full container mx-auto ">
 				<Logo />
 				<div class="flex items-center space-x-3">
